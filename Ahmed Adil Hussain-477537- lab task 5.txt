@@ -1,0 +1,99 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+int main()
+{
+//	LAB TASK 1
+	int x = 1;
+	do{
+	cout<<"enter a number: "<<endl;
+	cin>>x;}
+	while(x>0);
+
+
+
+//	LAB TASK 2
+	double a;		//the first number
+	double b;		//the second number
+	int ans;
+	char choice;	//the choice of operation
+	char offon; 	//the choice of turning the calculator off or on
+	do{
+		cout<<"Please enter the two numbers: "<<endl;
+		cin>>a >>b;
+		cout<<"Please choose the operation you want to conduct and enter the respective letter: "<<endl;
+		cout<<"add (a+b)= a"<<endl;
+		cout<<"sub (a-b) = s"<<endl;
+		cout<<"mult (a*b) = m"<<endl;
+		cout<<"div (a/b) = d"<<endl;
+		cout<<"power (a^b)) = p"<<endl;
+		cout<<"mod (a/b remainder) = r"<<endl;
+		cin>>choice;
+		switch(choice){
+			case 'a':
+			cout<<"The sum of the two numbers is: "<<a+b<<endl;
+			break;
+			case 's':
+			cout<<"The subtraction result is: "<<a-b<<endl;
+			break;
+			case 'm':
+			cout<<"The product of the two numbers is: "<<a*b<<endl;
+			break;
+			case 'd':
+			cout<<"The quotient of the two numbers is: "<<a/b<<endl;
+			break;
+			case 'p':
+			cout<<"The exponential is: "<<pow(a,b)<<endl;
+			break;
+			case 'r':
+			cout<<"The remainder is: "<<fmod(a,b)<<endl;
+			break;
+		}
+		
+		cout<<"do you want to turn off the calculator, or carry out another operation? (o for off, n for on)"<<endl;
+		cin>>offon;
+	}while(offon == 'N'|| offon =='n');	
+	
+//	LAB TASK 3
+	int esum;		//even number sum
+	int e = 0;
+	do{
+		e = e+2;
+		esum = esum + e;
+	}while(e <=98);
+	cout<<"The sum of all the even numbers from 2-100 (inclusive) is : "<<esum<<endl;
+	
+	int sqsum;		//squares' sum
+	int sq = 0;
+	do{
+		sq = sq+1;
+		sqsum = sqsum +pow(sq,2);
+	}while(sq <=99);
+	cout<<"The sum of all the squares of the numbers from 1-100 (inclusive) is : "<<sqsum<<endl;
+
+	
+//	LAB TASK 4
+
+	int pt; 		//power of two
+	int po = -1;	//power
+	do{
+		po = po + 1;
+		pt  = pow(2,po);
+		cout<<"2 ^ "<<po<<" = "<<pt<<endl;	
+	}while(po <=19);
+	
+	int q;					//first number
+	int r;					//second number					
+	int osum;				//odd number sum
+	cout<<"Please enter the two numbers (please make sure the second number is the greatest): "<<endl;
+	cin>>q>>r;
+	int d = (q-1);
+	if(r>q){
+		do{
+			d=d+1;
+			if(d % 2 != 0){osum = osum + d;}
+		}while (d <= (r-1));
+	cout<<"the sum of the odd numbers between the two numbers(inclusive) is: "<<osum<<endl;}
+	else{cout<<"Please follow the respective guideline >:("<<endl;}
+}
